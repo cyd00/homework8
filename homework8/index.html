@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+
+        .nav{
+            display: flex;
+            width:100%;
+            height:100px;
+            background-color: black;
+            display: flex;
+            justify-content:space-between ;
+            margin:0 auto;
+            align-items:center;
+        }
+        .nav >div{
+            color:white;
+        }
+        .left{
+            width:600px;
+            height: 88px;
+            display: flex;
+            margin-left:50px;
+            justify-content: space-between;
+            align-items:center;
+        }
+        a{
+            color: white;
+            text-decoration:none ;
+            
+        }
+        .left>div{
+            
+            font-size: 20px;
+        }
+        .yellow a{
+            color:rgb(241, 222, 43);
+        }
+        .mid{
+            width:500px;
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+        }
+        .bea{
+            width: 30px;
+            height: 30px;
+            background-image: url(./images/2.png) ;
+            background-position: -220px -18px;
+        }
+        .right{
+            width:280px;
+            display: flex;
+            
+            
+        }
+        .mid div:nth-child(2n){
+            font-size:15px;
+            color:silver;
+        }
+        .right img{
+            position: absolute;
+            height: 30px;
+        }
+        #wenzi{
+            position: relative;
+            color: silver;
+            top:4px;
+            left:6px;
+        }
+        .small{
+            width:10px;
+        }
+
+        .music{
+            width: 100%;
+            height:800px;
+            display: flex;
+        }
+        .rleft{
+            width:50%;
+            height:800px;
+            /* background-color: aqua; */
+            display: flex;
+            flex-direction: column;
+            margin-left:200px;
+        }
+        .xiyangyang{
+            width:100px;
+            
+            font-weight: bold;
+            font-size: 30px;
+            margin:50px auto;
+        }
+        .zhuanji{
+            display: flex;
+            width:600px;
+            height:30px;
+            margin:0 200px;
+            color:slategrey;
+        }
+        .kid{
+            color:rgb(241, 222, 43);
+        }
+        .pinglun{
+            width:20px;
+            height: 20px;
+            background-image: url(./images/7.jpg);
+            background-size: cover;
+            margin:0 10px;
+        }
+        .shangchuan{
+            display: flex;
+            height:50px;
+            width:400px;
+            margin:0 250px;
+            font-size: 14px;
+        }
+        .fenge{
+            width:100%;
+            height:1.5px;
+            background-color: silver;
+        }
+        .words{
+            width:300px;
+            height:500px;
+            display: flex;
+            flex-direction: column;
+            margin:30px auto;
+        }
+        .words div{
+            height:30px;
+            margin:0 auto;
+        }
+        #rrignt{
+            width:39%;
+            height:800px;
+           /* background:aqua; */
+            
+        }
+
+        #zhuan{
+            border:1px solid silver;
+            width:230px;
+            height:230px;
+            border-radius: 50%;
+            position: relative;
+            margin-top:100px;
+            margin-left:150px;
+            
+            
+        }
+        #rrignt img{
+            width:212px;
+            height:212px;
+            border-radius: 50%;
+            position: absolute;
+            margin-top:10px;
+            margin-left:10px;
+        }
+        .da{
+            width:40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.1);
+            border:1px solid silver;
+            position: absolute;
+            margin-top:100px;
+            margin-left:100px;
+        }
+        .xiao{
+            width:15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: white;
+            border:1px solid silver;
+            position: absolute;
+            margin-top:112px;
+            margin-left:112px;
+        }
+        #play{
+            width:400px;
+            height:100px;
+            display: flex;
+            margin-top:20px;
+            margin-left:80px;
+            /* justify-content: space-between; */
+            align-items:center;
+        }
+        #btn{
+            width:40px;
+            height:40px;
+            border-radius: 50%;
+            background-image: url(./images/8.jpg);
+            background-position: -110px 0px;
+        }
+        #yellow{
+            width:10px;
+            height:10px;
+            border-radius: 50%;
+            background-image: url(./images/8.jpg);
+            background-position: -95px 0px;
+            /* left:10; */
+            margin-top:-3px;
+          
+            position: absolute;
+        }
+        #tiao{
+            width:250px;
+            height:6px;
+            background-color: silver;
+            /* margin-top: 20px; */
+            border-radius: 20%;
+            /* position: relative; */
+            margin-left:10px;
+        }
+        #processBar{
+            width:0px;
+            height:100%;
+            background-color: #ffcd2d;
+            float: left;
+            
+        }
+        @keyframes animation1{
+            0%{
+                transfrom:rotate(0deg);
+            }
+            100%{
+                transform:rotate(360deg);
+            }
+        }
+        #img{
+            animation:animation1 10s linear infinite;  
+        }
+        #laba{
+            width:25px;
+            height:25px;
+            background-image: url(./images/8.jpg);
+            background-position: -44px 0;
+            margin-top: 10px;
+            margin-left:10px;
+        }
+        #time{
+            margin-left:5px;
+            color:silver;
+        }
+        #download{
+            width:200px;
+            height:47px;
+            background-image: url(./images/8.jpg);
+            background-position: 0px -40px;
+            margin-left:150px;
+            position: relative;
+        }
+        #jian{
+            width:15px;
+            height:15px;
+            background-image: url(./images/8.jpg);
+            background-position: 0px -1px;
+            
+            position: absolute;
+            margin:20px 20px;
+        }
+        .zi{
+            margin:15px 40px;
+            position: absolute;
+        }
+        #prograssBar{
+            float: left;
+            position: relative;
+            /* width: ; */
+            height: 6px;
+            background: url(./img/prograssBg.png);
+            /* margin: 10px 10px 0 0; */
+            display: inline;
+        }
+        #guo{
+            width:330px;
+            height:100px;
+            margin-left: 100px;
+            margin-top: 50px;
+            display: flex;
+        }
+        .guo{
+            width:240px;
+            height: 60px;
+            background-size: 240px 60px;
+            background-image: url(./img/showAdBg.jpg);
+        }
+        .guoL{
+            width:40px;
+            height: 40px;
+            background-image: url(./img/郭子仪.jpg);
+            background-size: cover;
+            
+        }
+        .name{
+            color:slategray;
+            font-size: 12px;
+        }
+        .guoR{
+            width:200px;
+            height:40px;
+            margin-left:30px;
+            margin-top:10px;
+        }
+        .bofang{
+            display: flex;
+            justify-content: space-between;
+        }
+        .qu a {
+            color: violet;
+        }
+        .comment1{
+            width:888px;
+            height:300px;
+            /* background-color:salmon; */
+            margin-left:300px;
+
+        }
+        .ar{
+            font-size: 22px;
+            padding-right:10px;
+        }
+        .fenge1{
+            width:100%;
+            height:4px;
+            background-color: silver;
+        }
+        .touxiang{
+            width:50px;
+            height:50px;
+            background-image: url(./img/郭子仪.jpg);
+            background-size: cover;
+            margin-left:10px;
+        }
+        .box3{
+            width:100%;
+            height: 120px;
+            /* background: skyblue; */
+            display: flex;
+            margin-top: 50px;
+        }
+        #inp{
+            width:666px;
+            height:100px;
+            margin-left: 20px;
+            resize: none;
+            line-height:40px;
+        }
+        textarea::placeholder{
+            color:silver;
+            
+        }
+        .box4{
+            width:800px;
+            height:66px;
+            /* background: slateblue; */
+            margin:0 auto;
+            display: flex;
+            justify-content: space-around;
+        }
+        .smile{
+            /* margin-left:30px; */
+            width:20px;
+            height:20px;
+        }
+        #btn_ping{
+            width:66px;
+            height: 25px;
+            /* background-image: url(./img/current.jpg); */
+            background-color: #ffcd2d;
+            color:aliceblue;
+            text-align: center;
+            margin-left:20px;
+        }
+        .box5{
+            display: flex;
+        }
+        .comment2{
+            width:888px;
+            height:550px;
+            /* background-color: aqua; */
+            margin: 0 auto;
+        }
+        .sbox{
+            width:700px;
+            height: 150px;
+            /* background-color: aquamarine; */
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+        }
+        .takel{
+            width:460px;
+            
+        }
+        #text1,#text2,#text3{
+            border:0.5px solid silver;
+            width:100%;
+            height:88px;
+        }
+
+        .takel div{
+            width:250px;
+            height:20px;
+        }
+        .taker{
+            width:150px;
+            height:140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .share{
+            font-size:10px;
+            text-align: right;
+        }
+        .touxiang_2{
+            width:50px;
+            height:50px;
+            background-image: url(./img/def60.jpg);
+            background-size: cover;
+            margin-left:10px;
+        }
+        .delete{
+            text-align: right;
+        }
+
+        .fenye{
+            width:256px;
+            height:100px;
+            /* background-color: seagreen; */
+            margin-left:40%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .fenye div{
+            width:25px;
+            height:25px;
+            border-radius: 50%;
+            background-color: rgb(238, 236, 236);
+            text-align: center;
+            font-size: 10px;
+            line-height: 25px;
+        }
+        #left,#right{
+            color:silver;
+            font-weight: bold;
+        }
+        .fenye div:hover{
+            background-color: #ffcd2d;
+            color:white;
+        }
+        .name_1{
+            color:#f1c01e;
+            font-size: bold;
+        }
+        #gif{
+            width:25px;
+            height: 25px;
+            background-image: url(./img/gif.gif);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="nav">
+                <div class="left">
+                    <img src="images/4.jpg"/ class="six">
+                    <div class="yellow"><a href="">首页</a></div>
+                    <div ><a href="">榜单</a></div>
+                    <div ><a href="">歌手</a></div>
+                    <div ><a href="">下载酷我客户端</a></div>
+                </div>
+                <div class="mid">
+                    <div class="bea"></div>
+                    <div >美女秀</div>
+                    <div class="bea"></div>
+                    <div >酷我耳机</div>
+                    <div class="bea"></div>
+                    <div >VIP会员</div>
+                    <div class="bea"></div>
+                    <div >听</div>
+                    <div>更多服务</div>
+                    <div></div>
+                    <div >登陆</div>
+                </div>
+                <div class="right">
+                    <div class="small">^</div>
+                    <div ><img src="images/5.png"><span id="wenzi">找到好音乐</span></div>
+                </div>
+            
+        </div>
+
+        <div class="music">
+            <div class="rleft">
+                <div class="xiyangyang">喜羊羊</div>
+                <div class="zhuanji">专辑：
+                    <span class="kid"> 儿童大全</span> 
+                    &nbsp;&nbsp;&nbsp;歌手：<span class="kid"> 华语群星</span>&nbsp;&nbsp;&nbsp;分享
+                    <div class="pinglun"></div><span class="kid">评论</span>
+                </div>
+                <div class="shangchuan">上传时间：2015-10-02 歌曲来源：网络</div>
+                <div class="fenge"></div>
+                <div class="words">
+                    <div>在所有天气 拥有叫人 大小的力量</div>
+                    <div>虽然我只是只羊</div>
+                    <div>虽然我只是只羊</div>
+                    <div>喜羊羊 美羊羊 懒洋洋 沸羊羊</div>
+                    <div>慢羊羊 软绵绵 红太狼 灰太狼</div>
+                </div>
+            </div>
+            <div id="rrignt">
+                <div id="zhuan">
+                    <img src="./images/1.jpg" id="img">
+                    <div class="da"></div>
+                    <div class="xiao"></div>
+                </div>
+                <div id="play">
+                    <audio autoplay="autoplay" id="mymusic">
+                        <source src="./img/2.mp3" type="audio/mp3" id="source">
+                    </audio>
+                    <div id="btn" ></div>
+                    <div id="prograssBar">
+                        <div id="tiao">
+                        <div id="processBar"></div>
+                        <a href="##" id="yellow"></a>
+                        </div>
+                    </div>
+                    <div id="time">00:00</div>
+                    <div id="laba"></div>
+                </div>
+                <div id="download">
+                    <div id="jian"></div>
+                    <div class="zi">免费下载这首歌</div>
+                </div>
+                <div id="guo">
+                    <div class="guoL"></div>
+                    <div class="guo">
+                        
+                        <div class="guoR">
+                            <div class="name">郭子仪——H5班</div>
+                            <div class="bofang">
+                                <div id="gif"></div>
+                                喜羊羊与灰太狼
+                                <div class="qu"><a href="">去现场></a></div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="comment1">
+            <div class="box2"><span class="ar">评论</span>1703条评论</div>
+            <div class="fenge1"></div>
+            <div class="box3">
+                <div class="touxiang"></div>
+                <textarea id="inp" placeholder="分享你的音乐见解"></textarea>
+            </div>
+            <div class="box4">
+                <img src="./img/commenticon.png" class="smile">
+                <div class="box5">
+                    <div id="count">已输入0个字</div>
+                    <div id="btn_ping">评论</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="comment2">
+            <div class="ar">精彩评论</div>
+            <div class="fenge1"></div>
+            <div class="box6">
+                <div class='sbox' id="sbox1">
+                    <div class="touxiang" id="Box_one"></div>
+                    <div class="takel">
+                        <div class="name_1" id="name_1">
+                            郭子仪
+                        </div>
+                        <div id="text1"></div>
+                        <div id="time_1"></div>
+                    </div>
+                    <div class="taker">
+                        <div class="share">分享</div>
+                        <div class="delete">删除 163 <img src="./img/bg2.jpg"> 回复</div>
+                    </div>
+                </div>
+
+                <div class='sbox' id="sbox2">
+                    <div class="touxiang_2" id="Box_two"></div>
+                    <div class="takel">
+                        <div class="name_1" id="name_2">
+                            Forget
+                        </div>
+                        <div id="text2"></div>
+                        <div id="time_2"></div>
+                    </div>
+                    <div class="taker">
+                        <div class="share">分享</div>
+                        <div class="delete">149 <img src="./img/bg2.jpg"> 回复</div>
+                    </div>
+                </div>
+                <div class='sbox' id="sbox3">
+                    <div class="touxiang_2" id="Box_three"></div>
+                    <div class="takel">
+                        <div class="name_1" id="name_3">
+                            亚里士多德
+                        </div>
+                        <div id="text3"></div>
+                        <div id="time_3"></div>
+                    </div>
+                    <div class="taker">
+                        <div class="share">分享</div>
+                        <div class="delete"> 106 <img src="./img/bg2.jpg"> 回复</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fenye">
+            <div id="left"><</div>
+            <div id="fenBox1">1</div>
+            <div id="fenBox2">2</div>
+            <div id="fenBox3">3</div>
+            <div class="dian">...</div>
+            <div id="fenBox17">17</div>
+            <div id="right">></div>
+        </div>
+    </div>
+</body>
+<script>
+    var  playBtn=document.getElementById("btn");
+    var  processBtn=document.getElementById("yellow");//小黄点
+    var  processBar=document.getElementById("processBar");//进度条
+    var  prograssfBar=document.getElementById("tiao");
+    var  text1=document.getElementById("text1");//评论区的文字
+    var  text2=document.getElementById("text2");//评论区的文字
+    var  text3=document.getElementById("text3");//评论区的文字
+    var  time_1=document.getElementById("time_1");
+    var  time_2=document.getElementById("time_2");
+    var  time_3=document.getElementById("time_3");
+
+    var Box_one=document.getElementById("Box_one");
+    var Box_2=document.getElementById("Box_two");
+    var Box_3=document.getElementById("Box_three");
+    var sbox1=document.getElementById("sbox1");
+    var sbox2=document.getElementById("sbox2");
+    var sbox3=document.getElementById("sbox3");
+    var name1=document.getElementById("name_1");
+    var name2=document.getElementById("name_2");
+    var name3=document.getElementById("name_3");
+
+    var data1,data2,data3;
+
+
+
+    var laba=document.getElementById("laba");
+    var playTime=document.getElementById("time");
+    var mymusic=document.getElementById("mymusic");
+    var source=document.getElementById("cource");
+    var laba=document.getElementById("laba");
+    var width=prograssBar.clientWidth;
+
+
+    var btn_ping=document.getElementById("btn_ping");
+    var count=document.getElementById("count");
+    var inp=document.getElementById("inp");
+    var arr=new Array(100);
+    var i=0;
+
+
+    var left=document.getElementById("left");
+    var right=document.getElementById("right");
+    var Box1=document.getElementById("fenBox1");
+    var Box2=document.getElementById("fenBox2");
+
+    Box1.onclick=function (){
+        Box1.style.color="white";
+        Box1.style.backgroundColor="#ffcd2d";
+        // console.log(11);
+        var noteList = localStorage["noteList"];
+        noteList = JSON.parse(noteList);
+        if(noteList.length>=1){
+            Box_one.style.backgroundImage="url(./img/郭子仪.jpg)";
+            name1.innerHTML="郭子仪";
+            text1.innerHTML=noteList[0]["noteCotent"];
+            time_1.innerHTML=noteList[0]["noteId"];
+            sbox2.style.display="none";
+            sbox3.style.display="none";
+        }
+        if(noteList.length>=2){
+            Box_one.style.backgroundImage="url(./img/郭子仪.jpg)";
+            name1.innerHTML="郭子仪";
+            text1.innerHTML=noteList[0]["noteCotent"];
+            time_1.innerHTML=noteList[0]["noteId"];
+            sbox3.style.display="none";
+            sbox2.style.display="flex";
+            Box_2.style.backgroundImage="url(./img/def60.jpg)";
+            name2.innerHTML="Forget";
+            text2.innerHTML=noteList[1]["noteCotent"];
+            time_2.innerHTML=noteList[1]["noteId"];
+        }
+        if(noteList.length>=3){
+            Box_one.style.backgroundImage="url(./img/郭子仪.jpg)";
+            name1.innerHTML="郭子仪";
+            text1.innerHTML=noteList[0]["noteCotent"];
+            time_1.innerHTML=noteList[0]["noteId"];
+            sbox3.style.display="flex";
+            Box_2.style.backgroundImage="url(./img/def60.jpg)";
+            name2.innerHTML="Forget";
+            text2.innerHTML=noteList[1]["noteCotent"];
+            time_2.innerHTML=noteList[1]["noteId"];
+            Box_3.style.backgroundImage="url(./img/def60.jpg)";
+            name3.innerHTML="亚里士多德";
+            text3.innerHTML=noteList[2]["noteCotent"];
+            time_3.innerHTML=noteList[2]["noteId"];
+        }
+    }
+
+    Box2.onclick=function(){
+        Box2.style.backgroundColor="#ffcd2d";
+        Box2.style.color="white";
+        var noteList = localStorage["noteList"];
+        noteList = JSON.parse(noteList);
+        sbox1.style.display="none";
+        sbox2.style.display="none";
+        sbox3.style.display="none";
+        
+        if(noteList.length>3){
+            if(noteList.length==4){
+                sbox1.style.display="flex";
+                Box_one.style.backgroundImage="url(./img/def60.jpg)";
+                name1.innerHTML="月月红";
+                text1.innerHTML=noteList[3]["noteCotent"];
+                time_1.innerHTML=noteList[3]["noteId"];
+                
+            }
+            else if(noteList.length>3){
+                sbox2.style.display="flex";
+                Box_2.style.backgroundImage="url(./img/def60.jpg)";
+                name2.innerHTML="月月红";
+                text2.innerHTML=noteList[4]["noteCotent"];
+                time_2.innerHTML=noteList[4]["noteId"];
+                
+            }
+            else if(countI>4){
+                sbox3.style.display="flex";
+                Box_3.style.backgroundImage="url(./img/def60.jpg)";
+                name3.innerHTML="月月红";
+                text3.innerHTML=noteList[5]["noteCotent"];
+                time_3.innerHTML=noteList[5]["noteId"];
+                countI++;
+            }
+        }
+    }
+
+
+    btn_ping.onclick=function(){
+        getTime();
+        var noteContent = inp.value;
+			if(noteContent == "") {
+				alert("您的评论为空！");
+			}
+			else {
+				//将便签内容存储到本地存储中
+				saveNote(noteContent);
+				//获取便签列表，并且在页面上显示
+				getNotes();
+			
+			}
+    }
+    var timeNow;
+    var getTime=function(){
+        var d=new Date();
+        var year=d.getFullYear();
+        var month=change(d.getMonth()+1);
+        var day=change(d.getDate());
+        var hour=change(d.getHours());
+        var minute=change(d.getMinutes());
+        var second=change(d.getSeconds());
+        function change(t){
+            if(t<10){
+            return "0"+t;
+            }else{
+            return t;
+            }
+        }
+        timeNow=year+'-'+month+'-'+day+' '+hour+':'+minute+':'+second;
+        // arr[i]=timeNow;
+        i++;
+    }
+
+    inp.oninput=function(){
+        count.innerHTML="已输入"+inp.value.length+"个字";
+    }
+
+    window.onload=function(){
+        getNotes();
+    }
+
+    var countI=0;
+    
+    function getNotes() {
+        
+        text1.innerHTML = "";
+        text2.innerHTML = "";
+        text3.innerHTML = "";
+        
+        var noteList = localStorage["noteList"];
+        noteList = JSON.parse(noteList);
+        if(noteList.length==0){
+            sbox1.style.display="none";
+            sbox2.style.display="none";
+            sbox3.style.display="none";
+        }
+        if(noteList.length==1){
+            sbox2.style.display="none";
+            sbox3.style.display="none";
+        }
+        if(noteList.length==2){
+            sbox3.style.display="none";
+        }
+        if(noteList.length>=1){
+
+            text1.innerHTML = noteList[0]["noteCotent"];
+            time_1.innerHTML=noteList[0]["noteId"];
+            // countI++;
+        }
+        if(noteList.length>=2){
+            // sbox3.style.display="none";
+            text1.innerHTML = noteList[0]["noteCotent"];
+            text2.innerHTML = noteList[1]["noteCotent"];
+            // text3.innerHTML = noteList[countI+1]["noteCotent"];
+            time_2.innerHTML=noteList[countI]["noteId"];
+            countI++;
+        }
+        if(noteList.length>=3){
+            text3.innerHTML = noteList[2]["noteCotent"];
+            text2.innerHTML = noteList[1]["noteCotent"];
+            text1.innerHTML = noteList[0]["noteCotent"];
+            time_3.innerHTML=noteList[2]["noteId"];
+           
+        }
+ 
+    }
+
+
+    function saveNote(noteContent) {
+        getTime();
+        var noteList = localStorage["noteList"];
+        if(noteList == "" || noteList == null || noteList == undefined) {
+            localStorage["noteList"] = "[]";
+        }
+        noteList = JSON.parse(localStorage["noteList"]);
+        var noteObj = {noteId: timeNow, noteCotent: noteContent};
+        noteList.push(noteObj);
+        localStorage["noteList"] = JSON.stringify(noteList);
+	}
+
+    mutedMusic();
+    var start=true,sound=true;
+    var timeId;
+    function mutedMusic(){
+        laba.onclick=function(){
+          if(!sound){
+            //有声音
+            sound=true;
+            mymusic.muted=false;
+            return;
+          }
+          if(sound){
+            //静音
+            sound=false;
+            mymusic.muted=true;
+            return;
+         }
+        }
+      }
+
+      playBtn.onclick=function(){
+        mutedMusic();
+        clearInterval(timeId);
+        if(!start){
+          //暂停
+          start=true;
+          playBtn.style.backgroundPosition="-110px 0px";
+          mymusic.pause();
+          return;
+        }
+        if(start){
+          //播放
+          start=false;
+          playBtn.style.backgroundPosition="-206px -48px"
+          mymusic.play();
+        
+          var time=parseInt(mymusic.currentTime/60);//当前时间的分钟
+          var laTime=Math.round(mymusic.currentTime%60);//当前时间的秒数
+          var holTime=parseInt(mymusic.duration);//总共时间的秒数
+          var nowTime=time*60+laTime;
+          var nowWidth=Math.floor(nowTime/holTime*width); 
+
+          if(time>9&&laTime<10){
+            playTime.innerHTML=time+":"+"0"+laTime;
+          }else if(time>9&&laTime>9){
+            playTime.innerHTML=time+":"+laTime;
+          }else if((time<9&&laTime>9)){
+            playTime.innerHTML="0"+time+":"+laTime;
+          }else{
+            playTime.innerHTML="0"+time+":"+"0"+laTime;
+          }
+          var i=0,j=1;
+          
+          timeId=setInterval(function(){
+            laTime++;
+            
+            playTime.innerHTML="0"+time+":"+"0"+laTime;
+            if(laTime>9){
+              playTime.innerHTML="0"+time+":"+laTime;
+            }
+            if(laTime>59){
+              time++;
+              laTime=0;
+              playTime.innerHTML="0"+time+":"+"0"+laTime;
+            }
+            if(nowTime>=holTime){
+              mymusic.pause();
+            }
+
+            nowTime=time*60+laTime;
+            nowWidth=parseInt(nowTime/holTime*width);
+
+            processBar.style.width=nowWidth+"px";
+            processBar.style.background="#ffcd2d";
+            processBar.style.float="left";
+
+            
+            if(width==processBtn.clientWidth+nowWidth){
+                console.log(width);
+                // console.log(processBtn.clientWidth);
+                processBtn.style.left=nowWidth-processBtn.clientWidth+"px";
+            }
+            if(width>processBtn.clientWidth+nowWidth){
+              processBtn.style.left=nowWidth+"px";
+            }
+            if(nowWidth>=width){
+              clearInterval(timeId);
+              playBtn.style.backgroundPosition="-110px 0px";
+
+            }
+           },1000)
+           
+          return;
+        }
+
+      }
+
+</script>
+</html>
+
+
+
+
+
